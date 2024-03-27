@@ -1,6 +1,6 @@
-from models import LinkEntity
 from datetime import datetime
 
+from models import LinkEntity
 from schemas.link_schema import LinkUpdate
 
 

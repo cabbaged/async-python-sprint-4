@@ -1,9 +1,10 @@
-from fastapi import Request
 import logging
-from starlette.middleware.base import BaseHTTPMiddleware
-from services.blacklist_manager import BlacklistManager
-from fastapi import status
+
+from fastapi import Request, status
 from fastapi.responses import Response
+from starlette.middleware.base import BaseHTTPMiddleware
+
+from services.blacklist_manager import BlacklistManager
 
 
 class BlacklistMiddleware(BaseHTTPMiddleware):

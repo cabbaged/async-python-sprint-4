@@ -3,11 +3,12 @@ import logging
 import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
-from api.v1 import base, ping
 
+from api.v1 import base, ping
 from core import config
 from exception_handlers import apply_exception_handlers
 from middlewares.apply_middlewares import apply_middlewares
+
 logging.basicConfig(level=logging.INFO)
 
 

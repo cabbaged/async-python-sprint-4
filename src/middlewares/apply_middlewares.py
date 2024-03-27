@@ -1,6 +1,6 @@
-from .middleware import BlacklistMiddleware
 from fastapi import FastAPI
 
+from .middleware import BlacklistMiddleware
 
 middlewares = [BlacklistMiddleware]
 

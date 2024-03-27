@@ -1,5 +1,6 @@
-import json
 import ipaddress
+import json
+
 from root import PROJECT_ROOT
 
 

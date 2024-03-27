@@ -1,14 +1,12 @@
 from typing import Any, List, Union
 
-
 from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.responses import RedirectResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.db import get_session
 from schemas import link_schema
 from services.link import link_crud
-from fastapi.responses import RedirectResponse
-
 from services.statistic_processor import StatisticProcessor
 
 router = APIRouter()
