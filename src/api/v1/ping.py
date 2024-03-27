@@ -1,3 +1,4 @@
+import logging
 from typing import Any
 
 from fastapi import APIRouter, Depends, status
@@ -16,6 +17,5 @@ async def ping_db(
     """
     Ping database.
     """
-    import logging
     logging.getLogger('').info('ping')
     await db.execute('select 1')
