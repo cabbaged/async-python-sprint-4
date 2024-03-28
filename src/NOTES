@@ -1,1 +1,28 @@
-Проект настроен на работу с .env из учебных материалов и базой запущенной "docker run ..." из учебных материалов
+1. Запуск сервиса:
+uvicorn main:app --reload
+
+2. Запуск базы
+docker run \
+  --rm   \
+  --name postgres-fastapi \
+  -p 5432:5432 \
+  -e POSTGRES_USER=your_user \
+  -e POSTGRES_PASSWORD=your_password \
+  -e POSTGRES_DB=collection \
+  -d postgres:16
+Заполнить DATABASE_DSN в .env файле
+postgresql+asyncpg://{your_user}:{your_password}@localhost:5432/postgres
+
+Также в .env можно занести следующие настройки:
+APP_TITLE="MyLibraryApp"
+DATABASE_DSN=
+PROJECT_NAME = "library"
+PROJECT_HOST = "0.0.0.0"
+PROJECT_PORT = "8000"
+ECHO_DB = False
+
+3. Проверяем что алембик работает:
+alembic current
+
+Создаем схему бд:
+alembic upgrade head
